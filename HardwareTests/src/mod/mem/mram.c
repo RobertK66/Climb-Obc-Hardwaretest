@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <chip.h>
 
-#include "../../layer1/ssp/obc_ssp.h"
+#include "../../layer1/SSP/obc_ssp.h"
 #include "../cli/cli.h"
 
 #include "mram.h"

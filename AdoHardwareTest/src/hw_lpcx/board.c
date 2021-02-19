@@ -8,9 +8,9 @@
  */
 
 #include "lpcx_board.h"
-#include "../mod/cli/cli.h"
-#include "../layer1/I2C/obc_i2c.h"
-#include "../layer1/UART/uart.h"
+#include <mod/cli.h>
+//#include "../layer1/I2C/obc_i2c.h"
+//#include <ado_uart.h>
 
 #define LED0_GPIO_PORT_NUM	0
 #define LED0_GPIO_BIT_NUM   22
@@ -91,10 +91,11 @@ void LpcxClimbBoardInit() {
 	Chip_GPIO_WriteDirBit(LPC_GPIO, 3, 26, true);
 
 	// Decide the UART to use for command line interface.
-	InitUart(LPC_UART2, 115200, CliUartIRQHandler);		// UART2 - J2 Pin 40/41 on LPCXpresso 1769 Developer board.
-	SetCliUart(LPC_UART2);
+	CliInit1(LPC_UART2);		// UART2 - J2 Pin 40/41 on LPCXpresso 1769 Developer board.
+
+
 	// Init I2c bus for Onboard device(s) (1xEEProm)
-	InitOnboardI2C(ONBOARD_I2C);
+	//InitOnboardI2C(ONBOARD_I2C);
 
 }
 

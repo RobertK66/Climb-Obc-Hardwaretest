@@ -1,10 +1,10 @@
-#include <Chip.h>
+#include <chip.h>
 #include <stdio.h>
 
 #include "obc_adc.h"
-#include "..\cli\cli.h"
-#include "..\tim\obc_rtc.h"
-#include "..\..\hw_obc\obc_board.h"
+#include "../cli/cli.h"
+#include "../tim/obc_rtc.h"
+#include "../../hw_obc/obc_board.h"
 
 #define ADC_SUPPLY_CURRENT_PIN 		23 //ok
 #define ADC_SUPPLY_CURRENT_PORT 	0 //ok

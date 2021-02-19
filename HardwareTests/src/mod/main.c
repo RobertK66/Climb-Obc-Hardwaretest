@@ -25,7 +25,7 @@
 #ifdef RADIATION_TEST
 #include "rad/radiation_test.h"
 #endif
-
+// ddfdd
 
 bool signatureCalcBusy = false;
 void(*signatureCalculatedCallback)(FlashSign_t signature) = 0;
@@ -71,6 +71,8 @@ void MainInit() {
 	//MramInit();
 	//TmpInit();
 	CliInit();
+
+	LedInit();
 #ifdef RADIATION_TEST
 	RadTstInit();
 #endif
@@ -85,16 +87,18 @@ void MainMain() {
 	CliMain();
 	ThrMain();
 	TtcMain();
+
 //	FlashMain();
 //	MramMain();
 //	TmpMain();
 //	EepromMain();
 	bool tick = TimMain();
 	if (tick) {
-		ClimbLedToggle(0);
+		//ClimbLedToggle(0);
 		// Call module mains with 'tick - requirement'
 		//EepromMain();
 		RtcMain();			// At this moment we only track day changes here so Tick time is enough.
+		LedMain();
 #ifdef RADIATION_TEST
 		RadTstMain();
 #endif

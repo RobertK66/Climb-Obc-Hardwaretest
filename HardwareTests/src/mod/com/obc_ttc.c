@@ -7,9 +7,10 @@
 #include <string.h>
 #include <stdio.h>
 
-#include "..\..\layer1\UART\uart.h"
-#include "..\cli\cli.h"
-#include "..\crc\obc_checksums.h"
+#include "../../layer1/UART/uart.h"
+//#include "/home/jevgeni/climb_base/Climb-Obc-Hardwaretest/HardwareTests/src/layer1/UART/uart.h"
+#include "../cli/cli.h"
+#include "../crc/obc_checksums.h"
 
 #include "obc_ttc.h"
 

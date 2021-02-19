@@ -32,12 +32,10 @@
 #include "globals.h"
 
  #if defined(NO_BOARD_LIB)
- #include "chip.h"
+ #include <chip.h>
  #else
- #include "board.h"
+ #include <board.h>
  #endif
-
-
 
 /*****************************************************************************
  * Private types/enumerations/variables
@@ -47,7 +45,7 @@
  * Public types/enumerations/variables
  ****************************************************************************/
 
-#if defined(NO_BOARD_LIB)	// This is same for both hw_xy boards. Keep it here for the time being ....
+#if defined(NO_BOARD_LIB)
 const uint32_t OscRateIn = 12000000;
 const uint32_t RTCOscRateIn = 32768;
 #endif
@@ -83,17 +81,14 @@ void SystemInit(void)
 	fpuInit();
 #endif
 
+
+
 #if defined(NO_BOARD_LIB)
-#if defined (HW_USED)
-	ClimbBoardSystemInit();
-	Chip_SystemInit();
-#else
-	// The original LpcOpen way of Chip inizializing if no board is defined. it sets Clock to use IRC
-	/* Chip specific SystemInit */
-	Chip_SystemInit();
-#endif
-
-
+	#if defined (HW_USED)
+		ClimbBoardSystemInit();
+	#else
+		Chip_SystemInit();
+	#endif
 #else
 	/* Setup system clocking and muxing */
 	Board_SystemInit();

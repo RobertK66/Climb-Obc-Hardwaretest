@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <Chip.h>
+#include <chip.h>
 
 #include <cr_section_macros.h>
 

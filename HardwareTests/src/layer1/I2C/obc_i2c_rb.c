@@ -1,4 +1,4 @@
-#include <Chip.h>
+#include <chip.h>
 
 #include "obc_i2c_rb.h"
 

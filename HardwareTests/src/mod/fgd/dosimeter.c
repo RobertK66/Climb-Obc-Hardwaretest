@@ -4,18 +4,18 @@
  *  Created on: 11.01.2020
  */
 
-#include <Chip.h>
+#include <chip.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
 #include "dosimeter.h"
 
-#include "..\..\globals.h"
-#include "..\..\layer1\SPI\spi.h"
-#include "..\cli\cli.h"
-#include "..\tim\timer.h"
-#include "..\fgd\dosimeter.h"
+#include "../../globals.h"
+#include "../../layer1/SPI/spi.h"
+#include "../cli/cli.h"
+#include "../tim/timer.h"
+#include "../fgd/dosimeter.h"
 
 
 #define FLOGA_VCC_ENABLE_PORT	0

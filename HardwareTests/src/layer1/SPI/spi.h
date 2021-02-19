@@ -10,7 +10,7 @@
 
 // ===== INCLUDES =====
 
-#include <Chip.h>
+#include <chip.h>
 
 //#include "stc_debug.h"
 //#include "stc_io.h"

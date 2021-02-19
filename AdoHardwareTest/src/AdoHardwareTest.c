@@ -1,6 +1,6 @@
 /*
 ===============================================================================
- Name        : HardwareTests.c
+ Name        : AdoHardwareTest.c
  Author      : $(author)
  Version     :
  Copyright   : $(copyright)
@@ -8,39 +8,37 @@
 ===============================================================================
 */
 
-#include "globals.h"				// Go there to switch the used hardware board.
-
 #if defined (__USE_LPCOPEN)
 #if defined(NO_BOARD_LIB)
 #include "chip.h"
+#else
+#include "board.h"
 #endif
 #endif
 
-#include "retarget.h"
+#include "globals.h"
 #include <cr_section_macros.h>
 
-// module includes
-#include "mod/main.h"
+#include <stdio.h>
+#include <mod/cli.h>
 
+// TODO: insert other definitions and declarations here
 
 int main(void) {
 
-#if defined (__USE_LPCOPEN)
 #if defined (HW_USED)
 	// Our own board abstraction.
 	ClimbBoardInit();
 #endif
-	// The original LpcOpen way of Chip initialize if no board is defined.
-	// Some routines rely on SystemCoreClock variable ...???...
+
     // Read clock settings and update SystemCoreClock variable
     SystemCoreClockUpdate();
-#endif
+    // TODO: insert code here
 
-    MainInit();
-
-    // Enter an infinite loop
+    printf("Hello ADO World");
+    // Enter an infinite loop, just incrementing a counter
     while(1) {
-    	MainMain();
+    	CliMain();
     }
     return 0 ;
 }

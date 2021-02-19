@@ -10,8 +10,8 @@
 #include <string.h>		// for strcmp()
 #include <stdlib.h>		// for atoi()
 
-#include "..\..\globals.h"
-#include "..\cli\cli.h"
+#include "../../globals.h"
+#include "../cli/cli.h"
 
 #include "timer.h"
 
@@ -66,7 +66,6 @@ void TimInit() {
 	/* Enable timer interrupt */
 	NVIC_ClearPendingIRQ(MAINLOOP_TIMER_IRQ);
 	NVIC_EnableIRQ(MAINLOOP_TIMER_IRQ);
-
 
 	/* Enable another timer counting milliseconds */
 	Chip_TIMER_Init(MILLISECOND_TIMER);

@@ -10,9 +10,7 @@
 #include <string.h>
 
 #include "obc_board.h"
-#include "../mod/cli/cli.h"
-#include "../layer1/I2C/obc_i2c.h"
-#include "../layer1/UART/uart.h"
+#include <mod/cli.h>
 
 #define LED_GREEN_WD_GPIO_PORT_NUM               1
 #define LED_GREEN_WD_GPIO_BIT_NUM               18
@@ -119,11 +117,10 @@ void ObcClimbBoardInit() {
 	Chip_GPIO_WriteDirBit(LPC_GPIO, SUPPLY_RAIL_PORT, SUPPLY_RAIL_PIN, false);
 
 	// UART for comand line interface init
-	InitUart(LPC_UART2, 115200, CliUartIRQHandler);		// We use SP - B (same side as JTAG connector) as Debug UART.);
-	SetCliUart(LPC_UART2);
+	CliInit1(LPC_UART2);		// We use SP - B (same side as JTAG connector) as Debug UART.);
 
 	// Init I2c bus for Onboard devices (3xEEProm, 1xTemp, 1x FRAM)
-	InitOnboardI2C(ONBOARD_I2C);
+	//InitOnboardI2C(ONBOARD_I2C);
 
 	// Sidepanel supply swiches (outputs)
 	Chip_GPIO_WriteDirBit(LPC_GPIO, SP1_VCC_EN_PORT, SP1_VCC_EN_PIN, true);

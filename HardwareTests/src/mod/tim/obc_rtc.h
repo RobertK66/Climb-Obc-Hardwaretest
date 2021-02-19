@@ -5,7 +5,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <Chip.h>
+#include <chip.h>
 
 // Module Main API
 void RtcInit(void);

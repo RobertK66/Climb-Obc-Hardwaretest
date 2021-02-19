@@ -4,7 +4,7 @@
  *  Created on: 17.01.2020
  */
 
-#include <Chip.h>
+#include <chip.h>
 #include <stdio.h>
 
 #include "radiation_test.h"

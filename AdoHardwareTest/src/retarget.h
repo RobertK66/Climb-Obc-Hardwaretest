@@ -44,7 +44,7 @@
 
 
 
-// Keil (Realview) support
+/* Keil (Realview) support */
 #if defined(__CC_ARM)
 
 #include <stdio.h>
@@ -221,7 +221,7 @@ _STD_END
 
 #if !defined(DEBUG_SEMIHOSTING)
 
-#include "mod/cli/cli.h"		// We use routines of the CLI modules to redirect the stdio input output streams.
+#include <mod/cli.h>		// We use routines of the CLI modules to redirect the stdio input output streams.
 
 int WRITEFUNC(int iFileHandle, char *pcBuffer, int iLength)
 {
